@@ -1,8 +1,14 @@
-import React from 'react'
+import React,{useState} from 'react'
 
-function BookCreate() {
+function BookCreate({createBook}) {
+  const [title,setTitle] = useState('');
+  const handleChange = () => {
+    setTitle(
+        (prev) => prev
+    )
+  }
   return (
-    <div>BookCreate</div>
+    <input value={title} type="text" onChange={handleChange}/>
   )
 }
 
