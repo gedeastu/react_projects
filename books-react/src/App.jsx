@@ -5,12 +5,15 @@ import BookCreate from './components/BookCreate'
 function App() {
   const [books,setBooks] = useState([])
 
-  const createBook = (title) =>{
+  const createBook = (title) => {
     console.log('title is ',title)
   }
+
   return (
     <>
-     <BookCreate createBook = {createBook}/>
+    <div>
+      <BookCreate onCreateBook = {createBook}/>
+    </div>
     </>
   )
 }
