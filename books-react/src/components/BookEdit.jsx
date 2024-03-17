@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-function BookEdit({titleBook,onEdit}) {
+function BookEdit({titleBook,onEdit, onSubmit}) {
 
-  const [title,setTitle] = useState(titleBook)
+  const [title,setTitle] = useState(titleBook.title)
 
   const handleChange = (event) => {
     setTitle(event.target.value)
@@ -10,19 +10,17 @@ function BookEdit({titleBook,onEdit}) {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log('New title', title)
+    onEdit(titleBook.id,title)
+    onSubmit()
   }
 
-  const handleEdited = () => {
-    onEdit(title)
-  }
 
   return (
    <>
     <form action="" onSubmit={handleSubmit} className='flex flex-col p-5 gap-5'>
       <label htmlFor="">Title</label>
       <input type="text" onChange={handleChange} value={title} className='border border-black'/>
-      <button className='bg-blue-400' onClick={handleEdited}>save</button>
+      <button className='bg-blue-400'>save</button>
     </form>
    </>
   )
