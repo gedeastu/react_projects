@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import './App.css'
 import BookCreate from './components/BookCreate'
 import BookShow from './components/BookShow'
+import BookList from './components/BookList'
 
 function App() {
   const [books,setBooks] = useState([])
@@ -10,21 +11,17 @@ function App() {
     const updatedBooks = [
       ...books,
       {
-        id: 123,
+        id: Math.round(Math.random() * 9999),
         title: title
       }
     ]
     setBooks(updatedBooks)
   }
 
-  const renderBooks = books.map((value,index)=>{
-    <BookShow books={value} key={index}/>
-  })
-
   return (
     <>
     <div>
-      {renderBooks}
+      <BookList books={books}/>
       <BookCreate onCreateBook = {handleCreateBook}/>
     </div>
     </>
