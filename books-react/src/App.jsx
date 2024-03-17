@@ -1,18 +1,31 @@
 import React,{useState} from 'react'
 import './App.css'
 import BookCreate from './components/BookCreate'
+import BookShow from './components/BookShow'
 
 function App() {
   const [books,setBooks] = useState([])
 
-  const createBook = (title) => {
-    console.log('title is ',title)
+  const handleCreateBook = (title) => {
+    const updatedBooks = [
+      ...books,
+      {
+        id: 123,
+        title: title
+      }
+    ]
+    setBooks(updatedBooks)
   }
+
+  const renderBooks = books.map((value,index)=>{
+    <BookShow books={value} key={index}/>
+  })
 
   return (
     <>
     <div>
-      <BookCreate onCreateBook = {createBook}/>
+      {renderBooks}
+      <BookCreate onCreateBook = {handleCreateBook}/>
     </div>
     </>
   )

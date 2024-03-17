@@ -1,8 +1,10 @@
 import React from 'react'
 
-function BookShow() {
+function BookShow({books}) {
   return (
-    <div>BookShow</div>
+    <div>
+      <h1>{books.title}</h1>
+    </div>
   )
 }
 
