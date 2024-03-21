@@ -9,7 +9,9 @@ function BookCreate({ onCreateBook }) {
     
     onCreateBook(title)
 
-    setTitle('')
+    if (title.trim() !== '') {
+      setTitle('')
+    }
   }
 
   const handleChange = (event) => {
@@ -20,10 +22,10 @@ function BookCreate({ onCreateBook }) {
 
   return (
     <>
-    <form onSubmit={handleSubmit} className='m-5'>
+    <form onSubmit={handleSubmit} className='mx-5 gap-5 flex flex-row'>
         <label htmlFor="title">Title</label>
         <input id="title" value={title} type="text" onChange={handleChange} className='border border-black'/>
-        <button>Create</button>
+        <button disabled={title.trim() === ''}>Create</button>
     </form>
     </>
   )
