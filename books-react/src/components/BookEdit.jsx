@@ -1,9 +1,10 @@
 import React, { useState,useContext } from 'react'
 import BooksContext from '../context/books'
+import useBooksContext from '../hooks/use-books-context'
 
 function BookEdit({titleBook, onSubmit}) {
-  
-  const {editBook} = useContext(BooksContext)
+
+  const {editBook} = useBooksContext()
 
   const [title,setTitle] = useState(titleBook.title)
 
