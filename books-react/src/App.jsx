@@ -1,4 +1,4 @@
-import React,{useEffect, useContext} from 'react'
+import {useEffect, useContext} from 'react'
 import './App.css'
 import BookCreate from './components/BookCreate'
 import BookList from './components/BookList'
@@ -10,7 +10,7 @@ function App() {
 
   useEffect(()=>{
     fetchBooks()
-  },[])
+  },[fetchBooks])
 
   return (
     <>

@@ -22,7 +22,7 @@ function BookShow({book}) {
     setShowEdit(false)
   }
 
-  return (
+  return ( 
     <>
     <div className="border border-black w-96 my-4 mx-5 flex flex-col items-center justify-center">
       <img src={`https://picsum.photos/seed/${book.id}/200/200`} alt="" />
