@@ -29,9 +29,9 @@ function BookCreate() {
 
   return (
     <>
-    <form onSubmit={handleSubmit} className='mx-5 gap-5 flex flex-row'>
+    <form onSubmit={handleSubmit} className='mx-5 gap-5 flex flex-row items-center'>
         <label htmlFor="title">Title</label>
-        <input id="title" value={title} type="text" onChange={handleChange} className='border border-black'/>
+        <input id="title" value={title} type="text" onChange={handleChange} className='border border-black p-2'/>
         <button disabled={title.trim() === ''}>Create</button>
     </form>
     </>

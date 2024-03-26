@@ -25,7 +25,7 @@ function BookShow({book}) {
   return ( 
     <>
     <div className="border border-black w-96 my-4 mx-5 flex flex-col items-center justify-center">
-      <img src={`https://picsum.photos/seed/${book.id}/200/200`} alt="" />
+      <img src={`https://picsum.photos/seed/${book.id}/500/200`} alt="" />
       <div className="flex flex-row justify-end p-3 gap-3">
         <button onClick={handleShowEdit} className="border border-black px-5">{showEdit ? "cancle" : "edit"}</button>
         <button onClick={handleClickDelete} className="border border-black px-5"> X </button>
