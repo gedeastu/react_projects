@@ -30,7 +30,7 @@ function Provider({ children }) {
     const handleDeleteBookById = useCallback(async (id) => {
         const response = await axios.delete(`http://localhost:3001/books/${id}`)
         const updatedBooks = books.filter((book)=>{
-        return book.id != id
+            return book.id != id
         })
         setBooks(updatedBooks)
     },[])
@@ -38,7 +38,7 @@ function Provider({ children }) {
     //Edit Book by Id
     const handleEditedByIndex = async (id, newTitle) => {
         const response = await axios.put(`http://localhost:3001/books/${id}`,{
-        title : newTitle
+            title : newTitle
         })
         const updatedBooks = books.map((book)=>{
         if (book.id == id) {

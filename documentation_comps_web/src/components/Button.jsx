@@ -1,27 +1,28 @@
 import React from 'react'
+import '../App.css'
 import className from 'classnames'
 import { twMerge } from 'tailwind-merge'
 
 
-function Button({ children, primary, secondary, success, warning, danger, outline, rounded, large, medium}) {
+function Button({ children, primary, secondary, success, warning, danger, outline, rounded, buttonAnimation, ...props}) {
 
   const spacingClassName = className('px-5 py-5')
-  const themeClassName = twMerge(className(spacingClassName,{
+  const themeClassName = twMerge(className(props.className,`flex flex-row items-center justify-center ${spacingClassName}`,{
     'bg-red-500 text-white' : danger,
     'rounded-lg' : rounded,
     'bg-blue-500 text-white' : primary,
-    'outline outline-2 outline-offset-2 bg-white text-black' : outline && primary,
-    'w-44 h-44' : medium,
-    'w-96 h-60' : large,
+    'outline outline-2 outline-offset-2' : outline && primary,
+    'button-animation' : buttonAnimation
   }))
 
   return (
     <>
-    <button className={themeClassName}>
+    <button {...props} className={themeClassName}>
         {children}
     </button>
     </>
   )
+
 }
 
 Button.propTypes = {
