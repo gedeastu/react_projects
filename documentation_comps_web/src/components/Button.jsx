@@ -26,7 +26,7 @@ function Button({ children, primary, secondary, success, warning, danger, outlin
 }
 
 Button.propTypes = {
-  checkVariationValue: ({primary, secondary, success, warning, danger}) => {
+  checkVariationValue: ({primary, secondary, success, warning, danger, buttonAnimation}) => {
     //Number(!!value) -> 0
     //Number(!!value) + Number(!!value) -> 0
     const count = Number(!!primary) + Number(!!secondary) + Number(!!success) + Number(!!warning) + Number(!!danger)
