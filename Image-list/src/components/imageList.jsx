@@ -4,14 +4,24 @@ function ImageList({ images }) {
     const [selectedName, setSelectedName] = useState('');
    
     const handleClick = (name) => {
-      setSelectedName(name);
-    };
+      setSelectedName((previous)=>{
+        if(previous === name ){
+            return ''
+          }else{
+            return name
+          }})
+      }
   
     const renderedImages = images.map((image, index) => {
       // The editor might say there is a syntax error with the next line.  
       // There is no error!
+
+      const isClicked = selectedName === image.name
       return (
-        <img key={image.id} src={image.src} />
+        <div key={image.id} onClick={()=>handleClick(image.name)}>
+            <img src={image.src}/>
+            {isClicked && <h1>{image.name}</h1>}
+        </div>
       );
     });
   
@@ -23,6 +33,7 @@ function ImageList({ images }) {
         </div>
       </div>
     );
+
   }
 
 export default ImageList
