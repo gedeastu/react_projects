@@ -3,19 +3,20 @@ import { createContext,useState } from "react";
 const AccordionContext = createContext();
 function Provider({children}) {
 
-    const [expandedIndex,setExpandedIndex] = useState(0)
+    const [expandedIndex,setExpandedIndex] = useState()
 
     const handleClickAccordion = (index) =>{
         setExpandedIndex(index)
     }
+
     const isExpanded = (index) =>{
         index === expandedIndex
     }
 
     const valueToShare ={
-        isExpanded : isExpanded,
-        expandedIndex : expandedIndex,
-        setExpandedIndex : setExpandedIndex,
+        expandedIndex: expandedIndex,
+        isExpanded: isExpanded,
+        setExpandedIndex: setExpandedIndex,
         handleClickAccordion: handleClickAccordion
     }
 

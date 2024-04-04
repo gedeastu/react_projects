@@ -27,8 +27,10 @@ function App() {
 
   return (
     <>
-    {/* <Homepage/> */}
+    <div className='h-screen w-screen'>
     <Accordion items={items}/>
+    </div>
+    {/* <Homepage/> */}
     </>
   )
 }
