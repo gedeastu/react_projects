@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '../components/Button'
 import { FaApple } from "react-icons/fa";
 
-function Homepage() {
+function Buttonpage() {
     const handleClick = ()=>{
         console.log("CLICKED!")
     }
@@ -21,4 +21,4 @@ function Homepage() {
   )
 }
 
-export default Homepage
+export default Buttonpage
