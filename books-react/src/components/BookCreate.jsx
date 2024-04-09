@@ -16,15 +16,12 @@ function BookCreate() {
     if (title.trim() !== '') {
       setTitle('')
     }
-
   }
 
   const handleChange = (event) => {
-
     setTitle(
         (previous) => previous = event.target.value
     )
-
   }
 
   return (

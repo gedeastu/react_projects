@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Dropdown from '../components/Dropdown'
 function Dropdownpage() {
   const options = [
@@ -23,10 +23,17 @@ function Dropdownpage() {
         value: "Thiller"
     },
   ]
+  const[select,setSelect] = useState(null)
+  const handleSelect = (option) => {
+    //setSelect((previous)=>{
+    //  previous = select
+    //})
+    setSelect(option)
+  }
   return (
     <>
     <div className='w-screen h-screen'>
-    <Dropdown options={options}/>
+    <Dropdown options={options} handleSelect={handleSelect} select={select}/>
     </div>
     </>
   )
