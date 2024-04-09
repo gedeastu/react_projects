@@ -17,22 +17,20 @@ function Dropdown({options, handleSelect, select}) {
   }
 
   const renderOptions = options.map((option)=>{
-    return <div key={option.value} onClick={()=> handleOptionClick(option)} className='cursor-pointer' >
+    return <div className="hover:bg-sky-100 rounded cursor-pointer p-1" key={option.value} onClick={()=> handleOptionClick(option)} >
         <h1>
         {option.label}
         </h1>
     </div>
   })
 
-  let content = "Select Genre!"
-  if (select) {
-    content = select.label
-  }
   return (
    <>
     <div className='flex flex-col justify-center h-full w-full items-center'>
-        <div onClick={handleClick} className='cursor-pointer'>{select ? select.label : "Select Genre"}</div>
-       {appear && renderOptions}
+        <div className='w-48 relative'>
+            <div onClick={handleClick} className='cursor-pointer flex items-center justify-between rounded p-3 shadow-md bg-white w-full border '>{select?.label || "Select Genre"}</div>
+            {appear && <div className='absolute top-full w-full bg-white shadow-md border'>{renderOptions}</div>}
+        </div>
     </div>
    </>
   )
