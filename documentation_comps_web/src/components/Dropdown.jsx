@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState,useRef } from 'react'
 import { FaAngleDown,FaAngleUp } from "react-icons/fa";
 import className from 'classnames';
 import {twMerge} from 'tailwind-merge'
@@ -6,6 +6,20 @@ import Panel from './Panel';
 
 function Dropdown({options, handleSelect, select}) {
   const [appear,setAppear] = useState(false)
+  const dropdownRef = useRef(null)
+
+  useEffect(() => {
+    const handler = (event) => {
+      if (!dropdownRef.current.contains(event.target)){
+        setAppear(false)
+      }
+    }
+    document.addEventListener("click", handler, true)
+
+    return () => {
+      document.removeEventListener("click", handler)
+    }
+  },[])
 
   const handleClick = () => {
     setAppear((previous) => {
@@ -34,12 +48,10 @@ function Dropdown({options, handleSelect, select}) {
 
   return (
    <>
-    <div className='flex flex-col justify-center h-full w-full items-center'>
-        <div className='w-48 relative'>
+        <div ref={dropdownRef} className='w-48 relative'>
             <Panel onClick={handleClick} className='cursor-pointer flex items-center justify-between '>{select?.label || "Select Genre"}{icon}</Panel>
             {appear && <Panel className='absolute top-full'>{renderOptions}</Panel>}
         </div>
-    </div>
    </>
   )
 
