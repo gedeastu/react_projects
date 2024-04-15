@@ -9,10 +9,10 @@ function App() {
   return (
     <>
       <Link to={"/accordion"}>
-      Go to accordion
+       Go to accordion
       </Link>
       <Link to={"/dropdown"}>
-      Go to Dropdown
+       Go to Dropdown
       </Link>
       <div>
         <Route path={"/accordion"}>
