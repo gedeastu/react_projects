@@ -17,7 +17,7 @@ function Dropdown({options, handleSelect, select}) {
     document.addEventListener("click", handler, true)
 
     return () => {
-      document.removeEventListener("click", handler)
+      document.removeEventListener("click", handler, true)
     }
   },[])
 
