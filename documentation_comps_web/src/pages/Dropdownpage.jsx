@@ -32,7 +32,7 @@ function Dropdownpage() {
   }
   return (
     <>
-    <div className='w-screen h-screen flex flex-col justify-center items-center'>
+    <div className='flex h-[80vh] flex-col justify-center items-center'>
     <Dropdown options={options} handleSelect={handleSelect} select={select}/>
     </div>
     </>

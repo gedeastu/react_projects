@@ -13,8 +13,6 @@ function Provider({ children }) {
         setBooks(response.data)
     },[])
 
-   
-
     //Create Book
     const handleCreateBook = async (title) => {
         const response = await axios.post('http://localhost:3001/books',{
@@ -27,13 +25,13 @@ function Provider({ children }) {
     }
 
     //Delete Book by Id
-    const handleDeleteBookById = useCallback(async (id) => {
+    const handleDeleteBookById = async (id) => {
         const response = await axios.delete(`http://localhost:3001/books/${id}`)
         const updatedBooks = books.filter((book)=>{
             return book.id != id
         })
         setBooks(updatedBooks)
-    },[])
+    }
 
     //Edit Book by Id
     const handleEditedByIndex = async (id, newTitle) => {

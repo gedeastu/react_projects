@@ -8,7 +8,7 @@ function Buttonpage() {
     }
   return (
     <>
-    <div className='flex flex-row justify-center gap-10 items-center bg-lime-400 h-screen'>
+    <div className='flex flex-row justify-center gap-10 items-center bg-lime-400 h-[80vh]'>
       <Button primary rounded buttonAnimation outline onClick={handleClick}>
         <FaApple />
         CLICK

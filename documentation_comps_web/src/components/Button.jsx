@@ -11,6 +11,7 @@ function Button({ children, primary, secondary, success, warning, danger, outlin
     'bg-red-500 text-white' : danger,
     'rounded-lg' : rounded,
     'bg-blue-500 text-white' : primary,
+    'outline outline-2 outline-offset-2': outline,
     'outline outline-2 outline-offset-2' : outline && primary,
     'button-animation' : buttonAnimation
   }))
@@ -26,7 +27,7 @@ function Button({ children, primary, secondary, success, warning, danger, outlin
 }
 
 Button.propTypes = {
-  checkVariationValue: ({primary, secondary, success, warning, danger, buttonAnimation}) => {
+  checkVariationValue: ({primary, secondary, success, warning, danger}) => {
     //Number(!!value) -> 0
     //Number(!!value) + Number(!!value) -> 0
     const count = Number(!!primary) + Number(!!secondary) + Number(!!success) + Number(!!warning) + Number(!!danger)

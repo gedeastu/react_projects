@@ -24,7 +24,7 @@ function Accordionpage() {
   
     return (
       <>
-      <div className='h-screen w-screen'>
+      <div className='h-[80vh]'>
       <Accordion items={items}/>
       </div>
       {/* <Homepage/> */}
